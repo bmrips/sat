@@ -15,13 +15,13 @@ maintainer: benedikt.rips@gmail.com
 copyright: (c) 2022 Benedikt Rips
 category: Math
 build-type: Simple
-homepage: https://github.com/f1rstlady/sat
-bug-reports: https://github.com/f1rstlady/sat/issues
+homepage: https://github.com/bmrips/sat
+bug-reports: https://github.com/bmrips/sat/issues
 extra-doc-files: CHANGELOG.md
 
 source-repository head
   type: git
-  location: https://github.com/f1rstlady/sat.git
+  location: https://github.com/bmrips/sat.git
 
 flag nix
   description: Whether dependencies are managed by Nix.

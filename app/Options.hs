@@ -75,7 +75,7 @@ options =
     parseOutputFormat = eitherReader $ \case
       "text" -> Right Text
       "latex" -> Right Latex
-      fmt -> Left $ "unkown output format: " ++ fmt ++ "."
+      fmt -> Left $ "unknown output format: " ++ fmt ++ "."
   _showSolution =
     switch $
       long "show-solution"

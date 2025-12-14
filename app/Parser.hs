@@ -16,7 +16,7 @@ lexeme = L.lexeme space
 symbol :: String -> Parser String
 symbol = L.symbol space
 
--- An identifier consists of lettters.
+-- An identifier consists of letters.
 identifier :: Parser String
 identifier = label "identifier" $ lexeme $ some letterChar
 

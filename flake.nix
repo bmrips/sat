@@ -77,11 +77,17 @@
               check-symlinks.enable = true;
               check-vcs-permalinks.enable = true;
               convco.enable = true;
+              deadnix.enable = true;
               detect-private-keys.enable = true;
               hlint.enable = true;
+              markdownlint.enable = true;
+              markdownlint.settings.configuration.line_length = false;
               mixed-line-endings.enable = true;
+              statix.enable = true;
+              statix.settings.format = "stderr";
               treefmt.enable = true;
               trim-trailing-whitespace.enable = true;
+              typos.enable = true;
             };
           };
 
@@ -91,7 +97,12 @@
               cabal-gild.enable = true;
               fourmolu.enable = true;
               fourmolu.ghcOpts = [ "ImportQualifiedPost" ];
+              mdformat.enable = true;
+              mdformat.settings.wrap = "no";
               nixfmt.enable = true;
+              nixf-diagnose.enable = true;
+              nixf-diagnose.ignore = [ "sema-primop-overridden" ];
+              yamlfmt.enable = true;
             };
             settings.formatter.fourmolu.options = [ "--config=${./fourmolu.yaml}" ];
           };

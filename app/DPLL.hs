@@ -109,7 +109,7 @@ branch :: CNF Conjunction -> Writer Log Bool
 branch f = do
   let x = head (variables f)
       [(satPos, logPos), (satNeg, logNeg)] =
-        runWriter . (either return dpll <=< runExceptT) . ($ f) . propagate
+        runWriter . (either return dpll <=< runExceptT) . flip propagate f
           <$> [Pos x, Neg x]
   tell $ Log [Branch x logPos (if satPos then Nothing else Just logNeg)]
   return (satPos || satNeg)

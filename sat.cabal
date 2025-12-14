@@ -29,7 +29,12 @@ flag nix
   manual: True
 
 common warnings
-  ghc-options: -Wall
+  ghc-options:
+    -Wall
+    -Werror
+    -Wmissing-export-lists
+    -Wprepositive-qualified-module
+    -Wredundant-constraints
 
 executable sat
   import: warnings

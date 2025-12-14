@@ -23,6 +23,11 @@ source-repository head
   type:     git
   location: https://github.com/f1rstlady/sat.git
 
+flag nix
+  description: Whether dependencies are managed by Nix.
+  default: False
+  manual: True
+
 common warnings
   ghc-options: -Wall
 

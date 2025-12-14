@@ -88,7 +88,7 @@
           treefmt = {
             flakeCheck = !(pre-commit.enable && pre-commit.hooks.treefmt.enable);
             programs = {
-              cabal-fmt.enable = true;
+              cabal-gild.enable = true;
               fourmolu.enable = true;
               fourmolu.ghcOpts = [ "ImportQualifiedPost" ];
               nixfmt.enable = true;

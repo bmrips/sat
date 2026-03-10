@@ -19,21 +19,21 @@ symbol = L.symbol space
 
 -- An identifier consists of letters.
 identifier :: Parser String
-identifier = label "identifier" $ lexeme $ some letterChar
+identifier = label "identifier" $ lexeme (some letterChar)
 
 -- literal := posLiteral | negLiteral
 literal :: Parser (CNF Literal)
-literal = label "literal" $ posLiteral <|> negLiteral
+literal = label "literal" $ negLiteral <|> posLiteral
  where
   posLiteral = Pos <$> identifier
-  negLiteral = symbol "¬" *> (Neg <$> identifier)
+  negLiteral = Neg <$> (symbol "¬" *> identifier)
 
 -- disjunction := literal | `(` literal ( `∨` literal )+ `)`
 disjunction :: Parser (CNF Disjunction)
 disjunction = label "disjunction" $ Or <$> (try oneLiteral <|> moreLiterals)
  where
-  oneLiteral = (: []) <$> literal
-  moreLiterals = symbol "(" *> sepBy1 literal (symbol "∨") <* symbol ")"
+  oneLiteral = pure <$> literal
+  moreLiterals = between (symbol "(") (symbol ")") $ sepBy1 literal (symbol "∨")
 
 -- conjunction := disjunction ( `∧` disjunction )*
 conjunction :: Parser (CNF Conjunction)

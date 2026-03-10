@@ -4,11 +4,12 @@ module Main (
 
 import Control.Monad (when)
 import Control.Monad.Writer (runWriter)
+import Options.Applicative (execParser)
+import Prelude hiding (log)
+
 import DPLL
 import Options
-import Options.Applicative (execParser)
 import Printer.Latex
-import Prelude hiding (log)
 
 main :: IO ()
 main = do

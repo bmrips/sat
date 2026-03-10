@@ -4,11 +4,12 @@ module Printer.Latex (
   ToLatex (..),
 ) where
 
+import Data.List (intercalate)
+import Prelude hiding (log)
+
 import CNF
 import DPLL
-import Data.List (intercalate)
 import Printer.Util
-import Prelude hiding (log)
 
 -- Generate code to print data with LaTeX.
 class ToLatex a where

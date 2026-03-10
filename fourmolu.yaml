@@ -1,5 +1,9 @@
 column-limit: 80
 haddock-style: single-line
+import-grouping: by-scope
 indentation: 2
 let-style: inline
 respectful: false
+sort-constraints: true
+sort-deriving-classes: true
+sort-deriving-clauses: true

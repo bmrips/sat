@@ -11,15 +11,16 @@ module DPLL (
   satisfiable,
 ) where
 
-import CNF hiding (eliminate, propagate)
-import CNF qualified
 import Control.Monad (foldM, (<=<), (>=>))
 import Control.Monad.Except (ExceptT, liftEither, runExceptT)
 import Control.Monad.Writer (Writer, runWriter, tell)
 import Data.Function ((&))
 import Data.Maybe (fromMaybe)
-import Printer.Util
 import Prelude hiding (log)
+
+import CNF hiding (eliminate, propagate)
+import CNF qualified
+import Printer.Util
 
 -- The representation of the selectors used for elimination.
 data Selector = Units | PureLiterals

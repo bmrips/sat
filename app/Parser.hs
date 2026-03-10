@@ -2,11 +2,12 @@ module Parser (
   formula,
 ) where
 
-import CNF hiding (identifier)
 import Data.Void (Void)
 import Text.Megaparsec
 import Text.Megaparsec.Char
 import Text.Megaparsec.Char.Lexer qualified as L
+
+import CNF hiding (identifier)
 
 type Parser = Parsec Void String
 

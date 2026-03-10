@@ -6,7 +6,6 @@ module Options (
   optionsInfo,
 ) where
 
-import CNF
 import Options.Applicative (
   Parser,
   ParserInfo,
@@ -25,8 +24,10 @@ import Options.Applicative (
   switch,
   value,
  )
-import Parser qualified
 import Text.Megaparsec (parseMaybe)
+
+import CNF
+import Parser qualified
 
 -- The options.
 data Options = Options

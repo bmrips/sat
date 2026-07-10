@@ -50,9 +50,9 @@ userUrlFormat: '{{host}}/{{user}}'
 releaseCommitMessageFormat: 'chore(release): {{currentTag}}'
 issuePrefixes:
 - '#'
-host: null
-owner: null
-repository: null
+host: https://github.com
+owner: bmrips
+repository: sat
 template: null
 commitTemplate: null
 scopeRegex: ^[[:alnum:]]+(?:[-_/][[:alnum:]]+)*$
